@@ -45,10 +45,10 @@ export const constantRouterMap = [
     meta: { title: '仪表盘', icon: 'dashboard' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
       },
       {
         path: 'tree',
@@ -170,33 +170,33 @@ export const constantRouterMap = [
     ]
   },
 
-  {
-    path: '/books',
-    component: Layout,
-    redirect: '/example/table',
-    name: '图书管理系统',
-    meta: { title: '图书管理系统', icon: 'example' },
-    children: [
-      {
-        path: 'book',
-        name: '图书',
-        component: () => import('@/views/books/book/index'),
-        meta: { title: '图书', icon: 'table' }
-      },
-      {
-        path: 'author',
-        name: '作者',
-        component: () => import('@/views/books/author/index'),
-        meta: { title: '作者', icon: 'tree' }
-      },
-      {
-        path: 'publish',
-        name: '出版商',
-        component: () => import('@/views/books/publish/index'),
-        meta: { title: '出版商', icon: 'table' }
-      }
-    ]
-  },
+  // {
+  //   path: '/books',
+  //   component: Layout,
+  //   redirect: '/example/table',
+  //   name: '图书管理系统',
+  //   meta: { title: '图书管理系统', icon: 'example' },
+  //   children: [
+  //     {
+  //       path: 'book',
+  //       name: '图书',
+  //       component: () => import('@/views/books/book/index'),
+  //       meta: { title: '图书', icon: 'table' }
+  //     },
+  //     {
+  //       path: 'author',
+  //       name: '作者',
+  //       component: () => import('@/views/books/author/index'),
+  //       meta: { title: '作者', icon: 'tree' }
+  //     },
+  //     {
+  //       path: 'publish',
+  //       name: '出版商',
+  //       component: () => import('@/views/books/publish/index'),
+  //       meta: { title: '出版商', icon: 'table' }
+  //     }
+  //   ]
+  // },
 
   { path: '*', redirect: '/404', hidden: true }
 ]

@@ -2,11 +2,12 @@
   <div class="project">
     <!--表格-->
     <project-list :value="projects"></project-list>
-  </div> 
+  </div>
 </template>
 
 <script>
 import { getProjectList } from '@/api/project/project'
+import { getInfo } from '@/api/login'
 import ProjectList from './table'
 
 export default {
@@ -17,7 +18,7 @@ export default {
 
   data() {
     return {
-      projects: [],
+      projects: []
     }
   },
 
@@ -26,16 +27,21 @@ export default {
   },
 
   methods: {
-    fetchData() {
-      getProjectList().then(
+    // getUserInfo() {
+    //   getInfo().then(response => {
+    //   })
+    // },
+    async fetchData() {
+      var res = await getInfo()
+      var username = res.username
+      const data = { 'username': username }
+      getProjectList(data).then(
         res => {
           this.projects = res
           console.log(this.projects)
         })
-    },
-
+    }
   }
-
 }
 
 </script>

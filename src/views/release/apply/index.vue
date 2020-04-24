@@ -52,11 +52,11 @@ export default {
   data() {
     return {
       form: {
-	name: '',
+        name: '',
         version: '',
         info: '',
         detail: '',
-        reviewer:''
+        reviewer: ''
       },
       rules: {
         name: [
@@ -70,8 +70,7 @@ export default {
         ],
         reviewer: [
           { required: true, message: '请输人工单指派人', trigger: 'blur' }
-        ],
-    
+        ]
       },
       sa_list: [],
       project_list: [],
@@ -81,14 +80,12 @@ export default {
   },
 
   methods: {
-    getTag(event){
-      console.log(event)
-      const data = {'project_id':event}
+    getTag(event) {
+      const data = { 'project_id': event }
       getProjectTag(data).then(res => {
         this.tag_list = res
         console.log(this.tag_list)
       })
-      
     },
     onSubmit() {
       this.$message('submit!')
@@ -97,7 +94,7 @@ export default {
           return
         }
         const params = Object.assign({}, this.form)
-        console.log(params) 
+        console.log(params)
         createDeploy(params).then(res => {
           this.$message({
             message: '创建成功',
@@ -121,7 +118,7 @@ export default {
 
   watch: {
     state() {
-      getOneGroup(6).then(res => {
+      getOneGroup(1).then(res => {
         this.sa_list = res.members
         console.log(this.sa_list)
       })
@@ -133,7 +130,7 @@ export default {
     }
 
   }
- 
+
 }
 </script>
 

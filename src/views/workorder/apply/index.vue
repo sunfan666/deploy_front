@@ -105,7 +105,7 @@ export default {
 
   watch: {
     state() {
-      getOneGroup(6).then(res => {
+      getOneGroup(1).then(res => {
         this.sa_list = res.members
         console.log(this.sa_list)
       })
